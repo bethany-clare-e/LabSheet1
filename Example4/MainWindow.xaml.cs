@@ -13,7 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace LabSheet1
+namespace Example4
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
@@ -25,19 +25,25 @@ namespace LabSheet1
             InitializeComponent();
         }
 
-        private void TbxName_GotFocus(object sender, RoutedEventArgs e)
+        private void TbxNumber_GotFocus(object sender, RoutedEventArgs e)
         {
-            tbxName.Text = "";
-            //tbxName.Clear()
+            tbxNumber.Clear();
         }
 
-        private void BtnShowMessage_Click(object sender, RoutedEventArgs e)
+        private void BtnNumbercheck_Click(object sender, RoutedEventArgs e)
         {
             //read text from textbox
-            string name = tbxName.Text;
+            string numberEntered = tbxNumber.Text;
 
-            //display small message box
-            MessageBox.Show(string.Format($"Hello {name}"));
+            //check if it is a number
+            int number;
+            bool isNum = int.TryParse(numberEntered, out number);
+
+            //display a message
+            if (isNum)
+                tblkMessage.Text = "Valid number entered";
+            else
+                tblkMessage.Text = "Invalid number entered";
         }
     }
 }

@@ -13,7 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace LabSheet1
+namespace Example5_RadioButtons
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
@@ -25,19 +25,19 @@ namespace LabSheet1
             InitializeComponent();
         }
 
-        private void TbxName_GotFocus(object sender, RoutedEventArgs e)
+        private void BtnCheck_Click(object sender, RoutedEventArgs e)
         {
-            tbxName.Text = "";
-            //tbxName.Clear()
-        }
+            //check what radio button was selected
+            bool biggerSelected = rbBigger.IsChecked.Equals(true);
+            bool smallerSelected = rbSmaller.IsChecked.Equals(true);
 
-        private void BtnShowMessage_Click(object sender, RoutedEventArgs e)
-        {
-            //read text from textbox
-            string name = tbxName.Text;
+            //display message
+            if (biggerSelected)
+                MessageBox.Show("You selected bigger");
+            else if (smallerSelected)
+                MessageBox.Show("You selected smaller");
 
-            //display small message box
-            MessageBox.Show(string.Format($"Hello {name}"));
+               
         }
     }
 }

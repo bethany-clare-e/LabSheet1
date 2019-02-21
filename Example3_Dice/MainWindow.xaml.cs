@@ -13,7 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace LabSheet1
+namespace Example3_Dice
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
@@ -25,19 +25,28 @@ namespace LabSheet1
             InitializeComponent();
         }
 
-        private void TbxName_GotFocus(object sender, RoutedEventArgs e)
+        private void BtnRollDice_Click(object sender, RoutedEventArgs e)
         {
-            tbxName.Text = "";
-            //tbxName.Clear()
+            Update();
+
         }
 
-        private void BtnShowMessage_Click(object sender, RoutedEventArgs e)
+        public async void Update()
         {
-            //read text from textbox
-            string name = tbxName.Text;
+            //GENERATE A RANDOM NUMBER (1-6)
+            Random r = new Random();
+            
 
-            //display small message box
-            MessageBox.Show(string.Format($"Hello {name}"));
+            for (int i = 0; i < 20; i++)
+            {
+                int number = r.Next(1, 7);
+                //DISPLAY ON SCREEN
+                tblkNumber.Text = number.ToString();
+
+                await Task.Delay(20);
+            }
+
+            
         }
     }
 }

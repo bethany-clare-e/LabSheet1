@@ -1,0 +1,21 @@
+﻿<Window x:Class="Example7_BiggerSmallerGame.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Example7_BiggerSmallerGame"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Button x:Name="btnStartGame" Content="Start Game" HorizontalAlignment="Left" Margin="136,60,0,0" VerticalAlignment="Top" Width="75" Click="BtnStartGame_Click"/>
+        <TextBlock x:Name="tblkFirstNumber" HorizontalAlignment="Left" Margin="249,101,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Width="133" Height="25"/>
+        <RadioButton x:Name="rbBigger" Content="Bigger" HorizontalAlignment="Left" Margin="118,146,0,0" VerticalAlignment="Top"/>
+        <RadioButton x:Name="rbSmaller" Content="Smaller" HorizontalAlignment="Left" Margin="249,146,0,0" VerticalAlignment="Top"/>
+        <Button x:Name="btnGuess" Content="Guess" HorizontalAlignment="Left" Margin="136,191,0,0" VerticalAlignment="Top" Width="75" Click="BtnGuess_Click"/>
+        <TextBlock x:Name="tblkSecondNumber" HorizontalAlignment="Left" Margin="249,220,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Width="133" Height="29"/>
+        <TextBlock x:Name="tblkWinLose" HorizontalAlignment="Left" Margin="118,277,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Width="159" Height="41" FontSize="20" FontWeight="Bold" TextAlignment="Center" Foreground="#FF060505"/>
+        <TextBlock x:Name="tblk1" HorizontalAlignment="Left" Margin="136,101,0,0" TextWrapping="Wrap" Text="Initial Number" VerticalAlignment="Top" Width="86"/>
+        <TextBlock x:Name="tblk2" HorizontalAlignment="Left" Margin="136,220,0,0" TextWrapping="Wrap" Text="Second Number" VerticalAlignment="Top" Width="96" Height="29"/>
+
+    </Grid>
+</Window>
